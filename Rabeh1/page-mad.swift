@@ -13,70 +13,52 @@ struct page_mad: View {
     @State private var timer: Timer?
 
     var body: some View {
-        
-        ZStack {
-            Image("background")
-                .resizable()
-                .scaledToFill()
-                .edgesIgnoringSafeArea(.all)
+        NavigationView {
             
-            HStack(spacing:-18){
-                Image("fire")
-                //progress view
-                ProgressView(value: progress,
-                             label: { Text("") },
-                             currentValueLabel: { Text(progress.formatted(.percent.precision(.fractionLength(0)))) }).progressViewStyle(RoundedRectProgressViewStyle())
-                    .task {Timer.scheduledTimer(withTimeInterval: 1, repeats: true)
-                        { _ in self.progress += 0.00
+            ZStack {
+                Image("background")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                
+                HStack(spacing:-18){
+                    Image("fire")
+                    //progress view
+                    ProgressView(value: progress,
+                                 label: { Text("") },
+                                 currentValueLabel: { Text(progress.formatted(.percent.precision(.fractionLength(0)))) }).progressViewStyle(RoundedRectProgressViewStyle())
+                        .task {Timer.scheduledTimer(withTimeInterval: 1, repeats: true)
+                            { _ in self.progress += 0.00
+                                
+                                //                            if self.progress > 1.0 {
+                                //                                self.progress = 0.0
+                                //                            }
+                            }
                             
-                            //                            if self.progress > 1.0 {
-                            //                                self.progress = 0.0
-                            //                            }
-                        }
-                        
-                        
-                    }//end progress view
-                
-            }.position(x:200,y:100)
-            //end h stack
-            
-            Image("rabeh-mad").position(x:100,y:500)
-            
-            
-            Button {
-                
-            } label: {
-                ZStack {
+                            
+                        }//end progress view
                     
-                    Color(red: 0.429, green: 0.199, blue: 0.127)
-                    Text("افزع").font(.system(size: 36))
-                        .foregroundColor(Color.white)
-                }
+                }.position(x:200,y:100)
+                //end h stack
                 
-                .clipShape(Capsule())
+                Image("rabeh-mad").position(x:100,y:500)
                 
-            }.frame(width: 190.0, height: 80.0).padding(.top, 500.0)
-            
-            
-        }//end zstack
-    }//end bodey
-    
-    // Function to start the progress
-        func startProgress() {
-            isProgressActive = true
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-                self.progress += 0.05
-                if self.progress >= 1.0 {
-                    stopProgress()
+                
+                NavigationLink(destination: rabeh_working()) {
+                    ZStack {
+                        Color(red: 0.429, green: 0.199, blue: 0.127)
+                        Text("افزع").font(.system(size: 36))
+                            .foregroundColor(Color.white)
+                    }
+                    .clipShape(Capsule())
                 }
-            }
-        }
-    func stopProgress() {
-          isProgressActive = false
-          timer?.invalidate()
-          timer = nil
-      }
-    
+                .frame(width: 190.0, height: 80.0)
+                .padding(.top, 500.0)
+                
+            }//end zstack
+        }//end bodey
+        
+    }
     
 }//end page
 

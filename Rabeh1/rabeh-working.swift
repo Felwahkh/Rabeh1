@@ -11,6 +11,7 @@ struct rabeh_working: View {
     @State private var progress = 0.0
     @State private var isProgressActive = false
     @State private var timer: Timer?
+    
     var body: some View {
         
         ZStack {
