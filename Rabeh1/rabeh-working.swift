@@ -1,10 +1,3 @@
-//
-//  rabeh-working.swift
-//  Rabeh1
-//
-//  Created by Felwah on 26/03/1445 AH.
-//
-
 import SwiftUI
 
 struct rabeh_working: View {
@@ -27,7 +20,7 @@ struct rabeh_working: View {
                 ProgressView(value: progress,
                              label: { Text("") },
                              currentValueLabel: { Text(progress.formatted(.percent.precision(.fractionLength(0)))) })
-                .progressViewStyle(RRoundedRectProgressViewStyle())
+                .progressViewStyle(ColoredRoundedRectProgressViewStyle(progress: progress))
                 
             }.position(x: 200, y: 100)
             ZStack{
@@ -55,7 +48,9 @@ struct rabeh_working: View {
             .frame(width: 190.0, height: 80.0)
             .padding(.top, 500.0)
         }
-        .navigationBarBackButtonHidden(true) }
+        .navigationBarBackButtonHidden(true)
+    }
+    
     func startProgress() {
         isProgressActive = true
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
@@ -74,25 +69,28 @@ struct rabeh_working: View {
     }
 }
 
-
 struct rabeh_working_Previews: PreviewProvider {
     static var previews: some View {
         rabeh_working()
     }
 }
-struct RRoundedRectProgressViewStyle: ProgressViewStyle {
+
+struct ColoredRoundedRectProgressViewStyle: ProgressViewStyle {
+    var progress: Double
+    
     func makeBody(configuration: Configuration) -> some View {
-        ZStack(alignment: .leading) {
+        let color = progress <= 0.5 ? Color.red : Color.green
+        return ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 14)
                // .border(Color.black)
                 .frame(width: 250, height: 28)
                 .foregroundColor(.white)
-                 .cornerRadius(14)
+                .cornerRadius(14)
           
             
             RoundedRectangle(cornerRadius: 14)
                 .frame(width: CGFloat(configuration.fractionCompleted ?? 0) * 250, height: 28)
-                .foregroundColor(.red)
+                .foregroundColor(color)
         }
         .padding()
     }
