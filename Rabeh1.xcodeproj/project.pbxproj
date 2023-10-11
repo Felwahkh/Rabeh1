@@ -16,6 +16,7 @@
 		ACE6959F2AD5760D00EEB459 /* Rabeh1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE6959E2AD5760D00EEB459 /* Rabeh1UITestsLaunchTests.swift */; };
 		ACE695AC2AD5762400EEB459 /* page-mad.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE695AB2AD5762400EEB459 /* page-mad.swift */; };
 		ACE695B12AD5882200EEB459 /* BarProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE695B02AD5882200EEB459 /* BarProgressStyle.swift */; };
+		ACE695B32AD6E7CD00EEB459 /* rabeh-working.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE695B22AD6E7CD00EEB459 /* rabeh-working.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		ACE6959E2AD5760D00EEB459 /* Rabeh1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rabeh1UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ACE695AB2AD5762400EEB459 /* page-mad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "page-mad.swift"; sourceTree = "<group>"; };
 		ACE695B02AD5882200EEB459 /* BarProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarProgressStyle.swift; sourceTree = "<group>"; };
+		ACE695B22AD6E7CD00EEB459 /* rabeh-working.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "rabeh-working.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				ACE695812AD5760C00EEB459 /* Rabeh1App.swift */,
 				ACE695832AD5760C00EEB459 /* ContentView.swift */,
 				ACE695AB2AD5762400EEB459 /* page-mad.swift */,
+				ACE695B22AD6E7CD00EEB459 /* rabeh-working.swift */,
 				ACE695B02AD5882200EEB459 /* BarProgressStyle.swift */,
 				ACE695852AD5760D00EEB459 /* Assets.xcassets */,
 				ACE695872AD5760D00EEB459 /* Preview Content */,
@@ -267,6 +270,7 @@
 				ACE695842AD5760C00EEB459 /* ContentView.swift in Sources */,
 				ACE695AC2AD5762400EEB459 /* page-mad.swift in Sources */,
 				ACE695822AD5760C00EEB459 /* Rabeh1App.swift in Sources */,
+				ACE695B32AD6E7CD00EEB459 /* rabeh-working.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
