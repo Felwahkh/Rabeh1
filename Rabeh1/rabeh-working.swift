@@ -30,8 +30,13 @@ struct rabeh_working: View {
                 .progressViewStyle(RRoundedRectProgressViewStyle())
                 
             }.position(x: 200, y: 100)
+            ZStack{
+                Image("Big").position(x: 100, y: 300)
+                Image("Small").position(x: 130, y: 330)
+                Image("Small").position(x: 80, y: 340)
+            }
             
-            Image("rabeh-mad").position(x: 100, y: 500)
+            Image("RabehWorking").position(x: 100, y: 500)
             
             Button(action: {
                 if isProgressActive {
