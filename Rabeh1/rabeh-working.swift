@@ -50,7 +50,7 @@ struct rabeh_working: View {
             .frame(width: 190.0, height: 80.0)
             .padding(.top, 500.0)
         }
-    }
+        .navigationBarBackButtonHidden(true) }
     func startProgress() {
         isProgressActive = true
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
