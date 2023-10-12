@@ -56,6 +56,7 @@ struct page_mad: View {
                 .padding(.top, 500.0)
                 
             }//end zstack
+            
         }//end bodey
         
     }
