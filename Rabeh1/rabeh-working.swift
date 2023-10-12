@@ -4,6 +4,8 @@ struct rabeh_working: View {
     @State private var progress = 0.0
     @State private var isProgressActive = false
     @State private var timer: Timer?
+    @State private var img = "fire"
+    @State private var img2 = "fire-green"
     
     var body: some View {
         
@@ -14,7 +16,8 @@ struct rabeh_working: View {
                 .edgesIgnoringSafeArea(.all)
             
             HStack(spacing: -18) {
-                Image("fire")
+                let pic = progress <= 0.5 ? "fire" :"fire-green"
+                Image(pic)
                 
                 // Progress view
                 ProgressView(value: progress,
